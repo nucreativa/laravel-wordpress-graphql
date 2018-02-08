@@ -1,11 +1,12 @@
 <?php
 
-namespace App\GraphQL\Query;
+namespace LaravelWordpressGraphQL\Query;
 
 
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
+use LaravelWordpressModels\Models\Post;
 
 class PostsQuery extends Query {
 	protected $attributes = [
@@ -26,5 +27,10 @@ class PostsQuery extends Query {
 			'date'    => [ 'name' => 'date', 'type' => Type::string() ],
 			'slug'    => [ 'name' => 'slug', 'type' => Type::string() ],
 		];
+	}
+
+	public function resolve($root, $args)
+	{
+		return Post::all();
 	}
 }
