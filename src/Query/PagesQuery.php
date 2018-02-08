@@ -8,9 +8,9 @@ use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
 use LaravelWordpressModels\Models\Post;
 
-class PostsQuery extends Query {
+class PagesQuery extends Query {
 	protected $attributes = [
-		'name' => 'posts'
+		'name' => 'pages'
 	];
 
 	public function type() {
@@ -31,11 +31,11 @@ class PostsQuery extends Query {
 
 	public function resolve( $root, $args = [] ) {
 		if ( isset( $args['id'] ) ) {
-			return Post::type( 'post' )->where( 'ID', $args['id'] )->get();
+			return Post::type( 'page' )->where( 'ID', $args['id'] )->get();
 		} else if ( isset( $args['post_name'] ) ) {
-			return Post::type( 'post' )->where( 'post_name', $args['post_name'] )->get();
+			return Post::type( 'page' )->where( 'post_name', $args['post_name'] )->get();
 		} else {
-			return Post::type( 'post' )->get();
+			return Post::type( 'page' )->get();
 		}
 	}
 }
