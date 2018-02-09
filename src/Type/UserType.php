@@ -18,6 +18,10 @@ class UserType extends GraphQLType {
 				'type'        => Type::nonNull( Type::string() ),
 				'description' => 'The id of the user'
 			],
+			'username'   => [
+				'type'        => Type::string(),
+				'description' => 'The username of the user'
+			],
 			'name'   => [
 				'type'        => Type::string(),
 				'description' => 'The name of the user'
@@ -35,6 +39,10 @@ class UserType extends GraphQLType {
 
 	protected function resolveIdField( $root, $args ) {
 		return $root->ID;
+	}
+
+	protected function resolveUsernameField( $root, $args ) {
+		return $root->user_login;
 	}
 
 	protected function resolveNameField( $root, $args ) {

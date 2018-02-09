@@ -3,7 +3,7 @@
   "description": "Laravel Wordpress GraphQL",
   "type": "library",
   "license": "MIT",
-  "version": "0.3.1",
+  "version": "0.5.0",
   "authors": [
     {
       "name": "Ary Wibowo",
