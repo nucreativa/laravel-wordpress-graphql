@@ -20,9 +20,7 @@ class CategoriesQuery extends Query {
 	public function args() {
 		return [
 			'id'   => [ 'name' => 'id', 'type' => Type::string() ],
-			'name' => [ 'name' => 'name', 'type' => Type::string() ],
 			'slug' => [ 'name' => 'slug', 'type' => Type::string() ],
-			'menu' => [ 'name' => 'menu', 'type' => Type::string() ],
 		];
 	}
 
