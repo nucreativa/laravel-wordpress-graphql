@@ -3,6 +3,7 @@
 namespace LaravelWordpressGraphQL\Type;
 
 
+use Folklore\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
 
@@ -14,15 +15,15 @@ class UserType extends GraphQLType {
 
 	public function fields() {
 		return [
-			'id'      => [
+			'id'       => [
 				'type'        => Type::nonNull( Type::string() ),
 				'description' => 'The id of the user'
 			],
-			'username'   => [
+			'username' => [
 				'type'        => Type::string(),
 				'description' => 'The username of the user'
 			],
-			'name'   => [
+			'name'     => [
 				'type'        => Type::string(),
 				'description' => 'The name of the user'
 			],
@@ -30,9 +31,17 @@ class UserType extends GraphQLType {
 				'type'        => Type::string(),
 				'description' => 'The email of the user'
 			],
-			'status'  => [
+			'status'   => [
 				'type'        => Type::string(),
 				'description' => 'The status of the user'
+			],
+			'posts'    => [
+				'type'        => Type::listOf( GraphQL::type( 'Post' ) ),
+				'description' => 'The posts of the user',
+			],
+			'comments' => [
+				'type'        => Type::listOf( GraphQL::type( 'Comment' ) ),
+				'description' => 'The comments of the user',
 			],
 		];
 	}

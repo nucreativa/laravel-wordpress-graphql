@@ -3,6 +3,7 @@
 namespace LaravelWordpressGraphQL\Type;
 
 
+use Folklore\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
 
@@ -18,7 +19,7 @@ class CommentType extends GraphQLType {
 				'type'        => Type::nonNull( Type::string() ),
 				'description' => 'The id of the comment'
 			],
-			'post_id'           => [
+			'post_id'      => [
 				'type'        => Type::nonNull( Type::string() ),
 				'description' => 'The id of the comment'
 			],
@@ -45,6 +46,14 @@ class CommentType extends GraphQLType {
 			'date'         => [
 				'type'        => Type::string(),
 				'description' => 'The date of the comment'
+			],
+			'post'         => [
+				'type'        => GraphQL::type( 'Post' ),
+				'description' => 'The post of the comment',
+			],
+			'commentator'  => [
+				'type'        => GraphQL::type( 'User' ),
+				'description' => 'The author of the comment',
 			],
 		];
 	}
