@@ -40,7 +40,7 @@ class CommentType extends GraphQLType {
 				'description' => 'The content of the comment'
 			],
 			'status'       => [
-				'type'        => Type::string(),
+				'type'        => GraphQL::type( 'CommentStatus' ),
 				'description' => 'The status of the comment'
 			],
 			'date'         => [
