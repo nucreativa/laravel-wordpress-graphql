@@ -132,8 +132,8 @@ return [
 				'users'      => 'LaravelWordpressGraphQL\Query\UsersQuery',
 			],
 			'mutation' => [
-
-			]
+				'updateStatusPost' => 'App\GraphQL\Mutation\UpdateStatusPostMutation'
+			],
 		]
 	],
 
@@ -180,6 +180,7 @@ return [
 		'Comment'    => 'LaravelWordpressGraphQL\Type\CommentType',
 		'Attachment' => 'LaravelWordpressGraphQL\Type\AttachmentType',
 		'User'       => 'LaravelWordpressGraphQL\Type\UserType',
+		'PostStatus' => 'LaravelWordpressGraphQL\Enums\PostStatusEnum',
 	],
 
 	/*

@@ -15,47 +15,47 @@ class PostType extends GraphQLType {
 
 	public function fields() {
 		return [
-			'id'         => [
+			'id'          => [
 				'type'        => Type::nonNull( Type::string() ),
 				'description' => 'The id of the post'
 			],
-			'title'      => [
+			'title'       => [
 				'type'        => Type::string(),
 				'description' => 'The title of the post'
 			],
-			'content'    => [
+			'content'     => [
 				'type'        => Type::string(),
 				'description' => 'The content of the post'
 			],
-			'slug'       => [
+			'slug'        => [
 				'type'        => Type::string(),
 				'description' => 'The slug of the post'
 			],
-			'status'     => [
-				'type'        => Type::string(),
+			'status'      => [
+				'type'        => GraphQL::type( 'PostStatus' ),
 				'description' => 'The status of the post'
 			],
-			'date'       => [
+			'date'        => [
 				'type'        => Type::string(),
 				'description' => 'The date of the post'
 			],
-			'categories' => [
+			'categories'  => [
 				'type'        => Type::listOf( GraphQL::type( 'Category' ) ),
 				'description' => 'The categories of the post',
 			],
-			'tags'       => [
+			'tags'        => [
 				'type'        => Type::listOf( GraphQL::type( 'Tag' ) ),
 				'description' => 'The tags of the post',
 			],
-			'comments'   => [
+			'comments'    => [
 				'type'        => Type::listOf( GraphQL::type( 'Comment' ) ),
 				'description' => 'The comments of the post',
 			],
-			'attachments'   => [
+			'attachments' => [
 				'type'        => Type::listOf( GraphQL::type( 'Attachment' ) ),
 				'description' => 'The attachments of the post',
 			],
-			'author'   => [
+			'author'      => [
 				'type'        => GraphQL::type( 'User' ),
 				'description' => 'The author of the post',
 			],
