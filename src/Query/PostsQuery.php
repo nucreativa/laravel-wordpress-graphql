@@ -19,18 +19,23 @@ class PostsQuery extends Query {
 
 	public function args() {
 		return [
-			'id'   => [ 'name' => 'id', 'type' => Type::string() ],
-			'slug' => [ 'name' => 'slug', 'type' => Type::string() ],
+			'id'     => [ 'name' => 'id', 'type' => Type::string() ],
+			'slug'   => [ 'name' => 'slug', 'type' => Type::string() ],
+			'status' => [ 'name' => 'status', 'type' => GraphQL::type( 'PostStatus' ) ]
 		];
 	}
 
 	public function resolve( $root, $args = [] ) {
-		if ( isset( $args['id'] ) ) {
-			return Post::type( 'post' )->where( 'ID', $args['id'] )->get();
-		} else if ( isset( $args['slug'] ) ) {
-			return Post::type( 'post' )->where( 'post_name', $args['slug'] )->get();
-		} else {
-			return Post::type( 'post' )->get();
+		$post = Post::type( 'post' );
+		if ( isset( $args['status'] ) ) {
+			$post = $post->where( 'post_status', $args['status'] );
 		}
+		if ( isset( $args['id'] ) ) {
+			$post = $post->where( 'ID', $args['id'] );
+		} else if ( isset( $args['slug'] ) ) {
+			$post = $post->where( 'post_name', $args['slug'] );
+		}
+
+		return $post->get();
 	}
 }

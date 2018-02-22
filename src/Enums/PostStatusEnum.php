@@ -15,6 +15,7 @@ class PostStatusEnum extends EnumType
     public function values() {
         return [
         	'trash' => 'trash',
+        	'autodraft' => 'auto-draft',
         	'draft' => 'draft',
 	        'publish' => 'publish'
         ];
