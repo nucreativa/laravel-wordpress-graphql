@@ -132,7 +132,8 @@ return [
 				'users'      => 'LaravelWordpressGraphQL\Query\UsersQuery',
 			],
 			'mutation' => [
-				'updateStatusPost' => 'App\GraphQL\Mutation\UpdateStatusPostMutation'
+				'updateStatusPost'    => 'LaravelWordpressGraphQL\Mutation\UpdateStatusPostMutation',
+				'updateStatusComment' => 'LaravelWordpressGraphQL\Mutation\UpdateStatusCommentMutation'
 			],
 		]
 	],
@@ -173,14 +174,15 @@ return [
 	 * ]
 	 */
 	'types'                 => [
-		'Post'       => 'LaravelWordpressGraphQL\Type\PostType',
-		'Page'       => 'LaravelWordpressGraphQL\Type\PostType',
-		'Category'   => 'LaravelWordpressGraphQL\Type\CategoryType',
-		'Tag'        => 'LaravelWordpressGraphQL\Type\TagType',
-		'Comment'    => 'LaravelWordpressGraphQL\Type\CommentType',
-		'Attachment' => 'LaravelWordpressGraphQL\Type\AttachmentType',
-		'User'       => 'LaravelWordpressGraphQL\Type\UserType',
-		'PostStatus' => 'LaravelWordpressGraphQL\Enums\PostStatusEnum',
+		'Post'          => 'LaravelWordpressGraphQL\Type\PostType',
+		'Page'          => 'LaravelWordpressGraphQL\Type\PostType',
+		'Category'      => 'LaravelWordpressGraphQL\Type\CategoryType',
+		'Tag'           => 'LaravelWordpressGraphQL\Type\TagType',
+		'Comment'       => 'LaravelWordpressGraphQL\Type\CommentType',
+		'Attachment'    => 'LaravelWordpressGraphQL\Type\AttachmentType',
+		'User'          => 'LaravelWordpressGraphQL\Type\UserType',
+		'PostStatus'    => 'LaravelWordpressGraphQL\Enums\PostStatusEnum',
+		'CommentStatus' => 'LaravelWordpressGraphQL\Enums\CommentStatusEnum',
 	],
 
 	/*
