@@ -26,11 +26,11 @@ class CommentsQuery extends Query {
 
 	public function resolve( $root, $args ) {
 		if ( isset( $args['id'] ) ) {
-			return Comment::where( 'comment_ID', $args['id'] )->get();
+			return Comment::on('wordpress')->where( 'comment_ID', $args['id'] )->get();
 		} else if ( isset( $args['post_id'] ) ) {
-			return Comment::where( 'comment_post_ID', $args['post_id'] )->get();
+			return Comment::on('wordpress')->where( 'comment_post_ID', $args['post_id'] )->get();
 		} else {
-			return Comment::all();
+			return Comment::on('wordpress')->all();
 		}
 	}
 }

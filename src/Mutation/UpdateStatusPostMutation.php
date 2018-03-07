@@ -35,7 +35,7 @@ class UpdateStatusPostMutation extends Mutation {
 	}
 
 	public function resolve( $root, $args, $context, ResolveInfo $info ) {
-		$post = Post::type( 'post' )
+		$post = Post::on('wordpress')->type( 'post' )
 		            ->where( 'id', $args['id'] )
 		            ->first();
 

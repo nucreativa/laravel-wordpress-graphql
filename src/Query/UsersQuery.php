@@ -28,13 +28,13 @@ class UsersQuery extends Query {
 	public function resolve( $root, $args ) {
 
 		if ( isset( $args['id'] ) ) {
-			return Post::type( 'post' )->where( 'ID', $args['id'] )->get();
+			return Post::on('wordpress')->type( 'post' )->where( 'ID', $args['id'] )->get();
 		} else if ( isset( $args['username'] ) ) {
-			return User::where( 'user_login', $args['username'] )->get();
+			return User::on('wordpress')->where( 'user_login', $args['username'] )->get();
 		} else if ( isset( $args['email'] ) ) {
-			return User::where( 'user_email', $args['email'] )->get();
+			return User::on('wordpress')->where( 'user_email', $args['email'] )->get();
 		} else {
-			return User::all();
+			return User::on('wordpress')->all();
 		}
 	}
 }

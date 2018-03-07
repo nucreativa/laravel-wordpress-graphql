@@ -26,7 +26,7 @@ class PagesQuery extends Query {
 	}
 
 	public function resolve( $root, $args = [] ) {
-		$post = Post::type( 'page' );
+		$post = Post::on('wordpress')->type( 'page' );
 		if ( isset( $args['status'] ) ) {
 			$post = $post->where( 'post_status', $args['status'] );
 		}

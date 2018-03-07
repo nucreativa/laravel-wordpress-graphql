@@ -26,6 +26,6 @@ class TagsQuery extends Query {
 	}
 
 	public function resolve( $root, $args ) {
-		return TermTaxonomy::where( 'taxonomy', 'post_tag' )->get();
+		return TermTaxonomy::on('wordpress')->where( 'taxonomy', 'post_tag' )->get();
 	}
 }

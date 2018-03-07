@@ -25,6 +25,6 @@ class CategoriesQuery extends Query {
 	}
 
 	public function resolve( $root, $args ) {
-		return TermTaxonomy::where( 'taxonomy', 'category' )->get();
+		return TermTaxonomy::on('wordpress')->where( 'taxonomy', 'category' )->get();
 	}
 }
