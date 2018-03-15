@@ -21,7 +21,8 @@ class PostsQuery extends Query {
 		return [
 			'id'     => [ 'name' => 'id', 'type' => Type::string() ],
 			'slug'   => [ 'name' => 'slug', 'type' => Type::string() ],
-			'status' => [ 'name' => 'status', 'type' => GraphQL::type( 'PostStatus' ) ]
+			'status' => [ 'name' => 'status', 'type' => GraphQL::type( 'PostStatus' ) ],
+            'categories' => [ 'name' => 'categories', 'type' => Type::string() ]
 		];
 	}
 
@@ -34,7 +35,13 @@ class PostsQuery extends Query {
 			$post = $post->where( 'ID', $args['id'] );
 		} else if ( isset( $args['slug'] ) ) {
 			$post = $post->where( 'post_name', $args['slug'] );
-		}
+        } else if ( isset( $args['categories'] ) ) {
+            $post = $post->join('term_relationships', 'posts.id', '=', 'term_relationships.object_id')
+                        ->join('term_taxonomy', 'term_relationships.term_taxonomy_id', '=', 'term_taxonomy.term_id')
+                        ->join('terms', 'terms.term_id', '=', 'term_taxonomy.term_id')
+                        ->where('term_taxonomy.taxonomy', '=', 'category')
+                        ->where('terms.slug',  '=', $args['categories']);
+        }
 
 		return $post->get();
 	}
