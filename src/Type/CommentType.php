@@ -55,10 +55,10 @@ class CommentType extends GraphQLType {
 				'type'        => GraphQL::type( 'User' ),
 				'description' => 'The author of the comment',
 			],
-            'child'  => [
-                'type'        => Type::listOf ( GraphQL::type( 'Comment' ) ),
-                'description' => 'The child of the comment',
-            ],
+			'child'        => [
+				'type'        => Type::listOf( GraphQL::type( 'Comment' ) ),
+				'description' => 'The child of the comment',
+			],
 		];
 	}
 
