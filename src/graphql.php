@@ -174,17 +174,17 @@ return [
 	 * ]
 	 */
 	'types'                 => [
-		'Post'          => 'LaravelWordpressGraphQL\Type\PostType',
-		'Page'          => 'LaravelWordpressGraphQL\Type\PostType',
-		'Category'      => 'LaravelWordpressGraphQL\Type\CategoryType',
-		'Tag'           => 'LaravelWordpressGraphQL\Type\TagType',
-		'Comment'       => 'LaravelWordpressGraphQL\Type\CommentType',
-		'Attachment'    => 'LaravelWordpressGraphQL\Type\AttachmentType',
-		'User'          => 'LaravelWordpressGraphQL\Type\UserType',
-		'PostStatus'    => 'LaravelWordpressGraphQL\Enums\PostStatusEnum',
-		'CommentStatus' => 'LaravelWordpressGraphQL\Enums\CommentStatusEnum',
-        'PaginationInput' => 'LaravelWordpressGraphQL\Inputs\PaginationInput',
-        'SortType' => 'LaravelWordpressGraphQL\Enums\SortTypeEnum',
+		'Post'            => 'LaravelWordpressGraphQL\Type\PostType',
+		'Page'            => 'LaravelWordpressGraphQL\Type\PostType',
+		'Category'        => 'LaravelWordpressGraphQL\Type\CategoryType',
+		'Tag'             => 'LaravelWordpressGraphQL\Type\TagType',
+		'Comment'         => 'LaravelWordpressGraphQL\Type\CommentType',
+		'Attachment'      => 'LaravelWordpressGraphQL\Type\AttachmentType',
+		'User'            => 'LaravelWordpressGraphQL\Type\UserType',
+		'PostStatus'      => 'LaravelWordpressGraphQL\Enums\PostStatusEnum',
+		'CommentStatus'   => 'LaravelWordpressGraphQL\Enums\CommentStatusEnum',
+		'PaginationInput' => 'LaravelWordpressGraphQL\Inputs\PaginationInput',
+		'SortType'        => 'LaravelWordpressGraphQL\Enums\SortTypeEnum',
 	],
 
 	/*
