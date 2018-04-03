@@ -6,6 +6,7 @@ namespace LaravelWordpressGraphQL\Query;
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
+use LaravelWordpressGraphQL\Helper\Paginates;
 use LaravelWordpressModels\Models\Post;
 use GraphQL\Type\Definition\ResolveInfo;
 
@@ -23,7 +24,8 @@ class PagesQuery extends Query {
 			'id'         => [ 'name' => 'id', 'type' => Type::string() ],
 			'slug'       => [ 'name' => 'slug', 'type' => Type::string() ],
 			'status'     => [ 'name' => 'status', 'type' => GraphQL::type( 'PostStatus' ) ],
-			'categories' => [ 'name' => 'categories', 'type' => Type::string() ]
+			'categories' => [ 'name' => 'categories', 'type' => Type::string() ],
+      Paginates::PAGINATION_KEY => [ 'name' => Paginates::PAGINATION_KEY, 'type' => GraphQL::type('PaginationInput') ],
 		];
 	}
 
@@ -64,6 +66,6 @@ class PagesQuery extends Query {
 			             ->where( 'terms.slug', '=', $args['categories'] );
 		}
 
-		return $post->get();
+		return Paginates::paginate($post, $args);
 	}
 }

@@ -183,6 +183,8 @@ return [
 		'User'          => 'LaravelWordpressGraphQL\Type\UserType',
 		'PostStatus'    => 'LaravelWordpressGraphQL\Enums\PostStatusEnum',
 		'CommentStatus' => 'LaravelWordpressGraphQL\Enums\CommentStatusEnum',
+        'PaginationInput' => 'LaravelWordpressGraphQL\Inputs\PaginationInput',
+        'SortType' => 'LaravelWordpressGraphQL\Enums\SortTypeEnum',
 	],
 
 	/*
