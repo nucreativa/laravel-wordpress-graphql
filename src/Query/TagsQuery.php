@@ -6,6 +6,7 @@ namespace LaravelWordpressGraphQL\Query;
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
+use LaravelWordpressGraphQL\Helper\Paginates;
 use LaravelWordpressModels\Models\Term;
 use LaravelWordpressModels\Models\TermTaxonomy;
 
@@ -23,18 +24,21 @@ class TagsQuery extends Query {
 			'id'   => [ 'name' => 'id', 'type' => Type::string() ],
 			'name' => [ 'name' => 'name', 'type' => Type::string() ],
 			'slug' => [ 'name' => 'slug', 'type' => Type::string() ],
+            Paginates::PAGINATION_KEY => [ 'name' => Paginates::PAGINATION_KEY, 'type' => GraphQL::type('PaginationInput') ],
 		];
 	}
 
 	public function resolve( $root, $args ) {
 		if ( isset( $args['id'] ) ) {
-			return Term::on( 'wordpress' )->where( 'term_id', $args['id'] )->get();
+			$builder = Term::on( 'wordpress' )->where( 'term_id', $args['id'] );
 		} else if ( isset( $args['name'] ) ) {
-			return Term::on( 'wordpress' )->where( 'name', $args['name'] )->get();
+			$builder = Term::on( 'wordpress' )->where( 'name', $args['name'] );
 		} else if ( isset( $args['slug'] ) ) {
-			return Term::on( 'wordpress' )->where( 'slug', $args['slug'] )->get();
+            $builder = Term::on( 'wordpress' )->where( 'slug', $args['slug'] );
 		} else {
-			return TermTaxonomy::on( 'wordpress' )->where( 'taxonomy', 'post_tag' )->get();
+            $builder = TermTaxonomy::on( 'wordpress' )->where( 'taxonomy', 'post_tag' );
 		}
+
+        return Paginates::paginate($builder, $args);
 	}
 }

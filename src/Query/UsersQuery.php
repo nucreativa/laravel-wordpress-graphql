@@ -6,6 +6,7 @@ namespace LaravelWordpressGraphQL\Query;
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
+use LaravelWordpressGraphQL\Helper\Paginates;
 use LaravelWordpressModels\Models\User;
 
 class UsersQuery extends Query {
@@ -22,19 +23,22 @@ class UsersQuery extends Query {
 			'id'   => [ 'name' => 'id', 'type' => Type::string() ],
 			'username' => [ 'name' => 'username', 'type' => Type::string() ],
 			'email' => [ 'name' => 'email', 'type' => Type::string() ],
+            Paginates::PAGINATION_KEY => [ 'name' => Paginates::PAGINATION_KEY, 'type' => GraphQL::type('PaginationInput') ],
 		];
 	}
 
 	public function resolve( $root, $args ) {
 
 		if ( isset( $args['id'] ) ) {
-			return Post::on('wordpress')->type( 'post' )->where( 'ID', $args['id'] )->get();
+			$builder = User::on('wordpress')->type( 'post' )->where( 'ID', $args['id'] );
 		} else if ( isset( $args['username'] ) ) {
-			return User::on('wordpress')->where( 'user_login', $args['username'] )->get();
+            $builder = User::on('wordpress')->where( 'user_login', $args['username'] );
 		} else if ( isset( $args['email'] ) ) {
-			return User::on('wordpress')->where( 'user_email', $args['email'] )->get();
+            $builder = User::on('wordpress')->where( 'user_email', $args['email'] );
 		} else {
-			return User::on('wordpress')->all();
+            $builder = User::on('wordpress');
 		}
+
+		return Paginates::paginate($builder, $args);
 	}
 }
