@@ -35,7 +35,7 @@ class UpdateStatusCommentMutation extends Mutation {
 	}
 
 	public function resolve( $root, $args, $context, ResolveInfo $info ) {
-		$comment = Comment::on('wordpress')->find( $args['id']);
+		$comment = Comment::on( 'wordpress' )->find( $args['id'] );
 
 		if ( ! $comment ) {
 			return null;

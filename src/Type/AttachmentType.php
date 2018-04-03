@@ -14,27 +14,27 @@ class AttachmentType extends GraphQLType {
 
 	public function fields() {
 		return [
-			'id'      => [
+			'id'        => [
 				'type'        => Type::nonNull( Type::string() ),
 				'description' => 'The id of the attachment'
 			],
-			'title'   => [
+			'title'     => [
 				'type'        => Type::string(),
 				'description' => 'The title of the attachment'
 			],
-			'status'  => [
+			'status'    => [
 				'type'        => Type::string(),
 				'description' => 'The status of the attachment'
 			],
-			'date'    => [
+			'date'      => [
 				'type'        => Type::string(),
 				'description' => 'The date of the attachment'
 			],
-			'url'    => [
+			'url'       => [
 				'type'        => Type::string(),
 				'description' => 'The url of the attachment'
 			],
-			'mime_type'    => [
+			'mime_type' => [
 				'type'        => Type::string(),
 				'description' => 'The mime type of the attachment'
 			],

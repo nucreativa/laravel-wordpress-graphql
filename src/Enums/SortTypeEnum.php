@@ -17,21 +17,21 @@ use Folklore\GraphQL\Support\EnumType;
  */
 class SortTypeEnum extends EnumType {
 
-    const ASC = 'asc';
-    const DESC = 'desc';
-    const DEFAULT_TYPE = self::DESC;
+	const ASC = 'asc';
+	const DESC = 'desc';
+	const DEFAULT_TYPE = self::DESC;
 
-    protected $attributes = [
-        'name' => 'SortTypeEnum',
-        'description' => 'An enum for Order By'
-    ];
+	protected $attributes = [
+		'name'        => 'SortTypeEnum',
+		'description' => 'An enum for Order By'
+	];
 
-    /** {@inheritdoc} */
-    public function values() {
-        return [
-            self::ASC => self::ASC,
-            self::DESC => self::DESC,
-        ];
-    }
+	/** {@inheritdoc} */
+	public function values() {
+		return [
+			self::ASC  => self::ASC,
+			self::DESC => self::DESC,
+		];
+	}
 
 }

@@ -19,34 +19,34 @@ use GraphQL\Type\Definition\Type;
  */
 class PaginationInput extends InputType {
 
-    const DEFAULT_PAGE = 1;
-    const DEFAULT_PERPAGE = 10;
+	const DEFAULT_PAGE = 1;
+	const DEFAULT_PERPAGE = 10;
 
-    protected $attributes = [
-        'name'        => 'PaginationInput',
-        'description' => 'Pagination input'
-    ];
+	protected $attributes = [
+		'name'        => 'PaginationInput',
+		'description' => 'Pagination input'
+	];
 
-    /** {@inheritdoc} */
-    public function fields() {
-        return [
-            'page' => [
-                'type' => Type::int(),
-                'description' => 'Current page value',
-            ],
-            'per_page' => [
-                'type' => Type::int(),
-                'description' => 'Per page row limit value',
-            ],
-            'sort_by' => [
-                'type' => Type::string(),
-                'description' => 'Contains sorting by column name value',
-            ],
-            'sort_type' => [
-                'type' => GraphQL::type('SortType'),
-                'description' => 'Contains sorting type value',
-            ]
-        ];
-    }
+	/** {@inheritdoc} */
+	public function fields() {
+		return [
+			'page'      => [
+				'type'        => Type::int(),
+				'description' => 'Current page value',
+			],
+			'per_page'  => [
+				'type'        => Type::int(),
+				'description' => 'Per page row limit value',
+			],
+			'sort_by'   => [
+				'type'        => Type::string(),
+				'description' => 'Contains sorting by column name value',
+			],
+			'sort_type' => [
+				'type'        => GraphQL::type( 'SortType' ),
+				'description' => 'Contains sorting type value',
+			]
+		];
+	}
 
 }

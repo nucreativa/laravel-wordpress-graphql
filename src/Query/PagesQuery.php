@@ -21,11 +21,14 @@ class PagesQuery extends Query {
 
 	public function args() {
 		return [
-			'id'         => [ 'name' => 'id', 'type' => Type::string() ],
-			'slug'       => [ 'name' => 'slug', 'type' => Type::string() ],
-			'status'     => [ 'name' => 'status', 'type' => GraphQL::type( 'PostStatus' ) ],
-			'categories' => [ 'name' => 'categories', 'type' => Type::string() ],
-      Paginates::PAGINATION_KEY => [ 'name' => Paginates::PAGINATION_KEY, 'type' => GraphQL::type('PaginationInput') ],
+			'id'                      => [ 'name' => 'id', 'type' => Type::string() ],
+			'slug'                    => [ 'name' => 'slug', 'type' => Type::string() ],
+			'status'                  => [ 'name' => 'status', 'type' => GraphQL::type( 'PostStatus' ) ],
+			'categories'              => [ 'name' => 'categories', 'type' => Type::string() ],
+			Paginates::PAGINATION_KEY => [
+				'name' => Paginates::PAGINATION_KEY,
+				'type' => GraphQL::type( 'PaginationInput' )
+			],
 		];
 	}
 
@@ -66,6 +69,6 @@ class PagesQuery extends Query {
 			             ->where( 'terms.slug', '=', $args['categories'] );
 		}
 
-		return Paginates::paginate($post, $args);
+		return Paginates::paginate( $post, $args );
 	}
 }
