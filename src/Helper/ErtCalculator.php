@@ -23,9 +23,9 @@ class ErtCalculator {
      */
     const AVG_WORDS_PER_MINUTE = 200;
 
-    const DEFAULT_MINUTE_FORMAT = '%s menit membaca';
-    const DEFAULT_FULL_FORMAT = '%s menit dan %s detik membaca';
-    const DEFAULT_SECOND_FORMAT = '%s detik membaca';
+    const DEFAULT_MINUTE_FORMAT = '%s minute(s)';
+    const DEFAULT_FULL_FORMAT = '%s minute(s) and %s second(s)';
+    const DEFAULT_SECOND_FORMAT = '%s second(s)';
     
     /** @var $content string */
     private $content;
