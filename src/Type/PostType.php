@@ -6,6 +6,7 @@ namespace LaravelWordpressGraphQL\Type;
 use Folklore\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
+use LaravelWordpressGraphQL\Helper\ErtCalculator;
 
 class PostType extends GraphQLType {
 	protected $attributes = [
@@ -59,6 +60,10 @@ class PostType extends GraphQLType {
 				'type'        => GraphQL::type( 'User' ),
 				'description' => 'The author of the post',
 			],
+            'estimated_read_time' => [
+                'type'        => Type::string(),
+                'description' => 'Post content estimated reading time',
+            ],
 		];
 	}
 
@@ -85,4 +90,9 @@ class PostType extends GraphQLType {
 	protected function resolveDateField( $root, $args ) {
 		return $root->post_date;
 	}
+
+    protected function resolveEstimatedReadTimeField( $root, $args ) {
+        return ErtCalculator::begin($root->post_content)->getMinuteText();
+    }
+
 }
