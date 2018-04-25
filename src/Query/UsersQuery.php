@@ -33,7 +33,7 @@ class UsersQuery extends Query {
 	public function resolve( $root, $args ) {
 
 		if ( isset( $args['id'] ) ) {
-			$builder = User::on( 'wordpress' )->type( 'post' )->where( 'ID', $args['id'] );
+			$builder = User::on( 'wordpress' )->where( 'ID', $args['id'] );
 		} else if ( isset( $args['username'] ) ) {
 			$builder = User::on( 'wordpress' )->where( 'user_login', $args['username'] );
 		} else if ( isset( $args['email'] ) ) {
