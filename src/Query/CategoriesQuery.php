@@ -29,6 +29,9 @@ class CategoriesQuery extends Query {
 				'name' => Paginates::PAGINATION_KEY,
 				'type' => GraphQL::type( 'PaginationInput' )
 			],
+
+            // Exclude category ids retrieval
+            'exclude_ids'             => [ 'name' => 'exclude_ids', 'type' => Type::listOf(Type::int() ) ],
 		];
 	}
 
@@ -40,6 +43,10 @@ class CategoriesQuery extends Query {
 		if ( isset( $args['slug'] ) ) {
 			$builder = $builder->where( 'slug', $args['slug'] );
 		}
+        if ( isset($args['exclude_ids']) && !empty($args['exclude_ids'] ) ) {
+            // Only proceed if exclude_ids data is set and not empty array
+            $builder = $builder->whereNotIn('term_id', $args['exclude_ids']);
+        }
 
 		return Paginates::paginate( $builder, $args );
 	}
