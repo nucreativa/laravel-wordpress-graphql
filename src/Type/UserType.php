@@ -8,6 +8,9 @@ use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
 
 class UserType extends GraphQLType {
+
+    const GRAVATAR_BASE_URL = 'https://secure.gravatar.com/avatar';
+
 	protected $attributes = [
 		'name'        => 'User',
 		'description' => 'A user'
@@ -43,6 +46,10 @@ class UserType extends GraphQLType {
 				'type'        => Type::listOf( GraphQL::type( 'Comment' ) ),
 				'description' => 'The comments of the user',
 			],
+            'image_url' => [
+                'type'        => Type::string(),
+                'description' => 'The image of the user'
+            ]
 		];
 	}
 
@@ -65,4 +72,9 @@ class UserType extends GraphQLType {
 	protected function resolveStatusField( $root, $args ) {
 		return $root->user_status;
 	}
+
+	protected function resolveImageUrlField($root, $args) {
+	    // Currently only handle gravatar image url
+        return self::GRAVATAR_BASE_URL.'/'.md5($root->user_email);
+    }
 }
