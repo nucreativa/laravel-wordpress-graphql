@@ -27,6 +27,7 @@ class PostsQuery extends Query {
 			'slug'                    => [ 'name' => 'slug', 'type' => Type::string() ],
 			'status'                  => [ 'name' => 'status', 'type' => GraphQL::type( 'PostStatus' ) ],
 			'categories'              => [ 'name' => 'categories', 'type' => Type::string() ],
+            'tags'                    => [ 'name' => 'tags', 'type' => Type::string() ],
 			Paginates::PAGINATION_KEY => [
 				'name' => Paginates::PAGINATION_KEY,
 				'type' => GraphQL::type( 'PaginationInput' )
