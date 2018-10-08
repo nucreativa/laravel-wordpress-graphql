@@ -3,7 +3,7 @@
   "description": "Laravel Wordpress GraphQL",
   "type": "library",
   "license": "MIT",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "authors": [
     {
       "name": "Ary Wibowo",
@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "folklore/graphql": "^1.0",
+    "folklore/graphql": "^1.1",
     "nucreativa/laravel-wordpress-models": "^1.0"
   },
   "minimum-stability": "stable",
