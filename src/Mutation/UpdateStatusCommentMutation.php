@@ -1,13 +1,13 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Mutation;
+namespace Nucreativa\LaravelWordpressGraphQL\Mutation;
 
 
 use Folklore\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
-use LaravelWordpressModels\Models\Comment;
+use Nucreativa\LaravelWordpressModels\Models\Comment;
 
 class UpdateStatusCommentMutation extends Mutation {
 	protected $attributes = [

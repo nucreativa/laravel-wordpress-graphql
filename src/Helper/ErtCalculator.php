@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Helper;
+namespace Nucreativa\LaravelWordpressGraphQL\Helper;
 
 /**
  * Estimated read time calculator helper. Use #begin() method as an entry point.

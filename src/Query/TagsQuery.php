@@ -1,14 +1,14 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Query;
+namespace Nucreativa\LaravelWordpressGraphQL\Query;
 
 
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
-use LaravelWordpressGraphQL\Helper\Paginates;
-use LaravelWordpressModels\Models\Term;
-use LaravelWordpressModels\Models\TermTaxonomy;
+use Nucreativa\LaravelWordpressGraphQL\Helper\Paginates;
+use Nucreativa\LaravelWordpressModels\Models\Term;
+use Nucreativa\LaravelWordpressModels\Models\TermTaxonomy;
 
 class TagsQuery extends Query {
 	protected $attributes = [

@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Inputs;
+namespace Nucreativa\LaravelWordpressGraphQL\Inputs;
 
 use GraphQL;
 use Folklore\GraphQL\Support\InputType;

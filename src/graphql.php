@@ -124,16 +124,16 @@ return [
 	'schemas'               => [
 		'default' => [
 			'query'    => [
-				'posts'      => 'LaravelWordpressGraphQL\Query\PostsQuery',
-				'pages'      => 'LaravelWordpressGraphQL\Query\PagesQuery',
-				'categories' => 'LaravelWordpressGraphQL\Query\CategoriesQuery',
-				'tags'       => 'LaravelWordpressGraphQL\Query\TagsQuery',
-				'comments'   => 'LaravelWordpressGraphQL\Query\CommentsQuery',
-				'users'      => 'LaravelWordpressGraphQL\Query\UsersQuery',
+				'posts'      => 'Nucreativa\LaravelWordpressGraphQL\Query\PostsQuery',
+				'pages'      => 'Nucreativa\LaravelWordpressGraphQL\Query\PagesQuery',
+				'categories' => 'Nucreativa\LaravelWordpressGraphQL\Query\CategoriesQuery',
+				'tags'       => 'Nucreativa\LaravelWordpressGraphQL\Query\TagsQuery',
+				'comments'   => 'Nucreativa\LaravelWordpressGraphQL\Query\CommentsQuery',
+				'users'      => 'Nucreativa\LaravelWordpressGraphQL\Query\UsersQuery',
 			],
 			'mutation' => [
-				'updateStatusPost'    => 'LaravelWordpressGraphQL\Mutation\UpdateStatusPostMutation',
-				'updateStatusComment' => 'LaravelWordpressGraphQL\Mutation\UpdateStatusCommentMutation'
+				'updateStatusPost'    => 'Nucreativa\LaravelWordpressGraphQL\Mutation\UpdateStatusPostMutation',
+				'updateStatusComment' => 'Nucreativa\LaravelWordpressGraphQL\Mutation\UpdateStatusCommentMutation'
 			],
 		]
 	],
@@ -174,17 +174,17 @@ return [
 	 * ]
 	 */
 	'types'                 => [
-		'Post'            => 'LaravelWordpressGraphQL\Type\PostType',
-		'Page'            => 'LaravelWordpressGraphQL\Type\PostType',
-		'Category'        => 'LaravelWordpressGraphQL\Type\CategoryType',
-		'Tag'             => 'LaravelWordpressGraphQL\Type\TagType',
-		'Comment'         => 'LaravelWordpressGraphQL\Type\CommentType',
-		'Attachment'      => 'LaravelWordpressGraphQL\Type\AttachmentType',
-		'User'            => 'LaravelWordpressGraphQL\Type\UserType',
-		'PostStatus'      => 'LaravelWordpressGraphQL\Enums\PostStatusEnum',
-		'CommentStatus'   => 'LaravelWordpressGraphQL\Enums\CommentStatusEnum',
-		'PaginationInput' => 'LaravelWordpressGraphQL\Inputs\PaginationInput',
-		'SortType'        => 'LaravelWordpressGraphQL\Enums\SortTypeEnum',
+		'Post'            => 'Nucreativa\LaravelWordpressGraphQL\Type\PostType',
+		'Page'            => 'Nucreativa\LaravelWordpressGraphQL\Type\PostType',
+		'Category'        => 'Nucreativa\LaravelWordpressGraphQL\Type\CategoryType',
+		'Tag'             => 'Nucreativa\LaravelWordpressGraphQL\Type\TagType',
+		'Comment'         => 'Nucreativa\LaravelWordpressGraphQL\Type\CommentType',
+		'Attachment'      => 'Nucreativa\LaravelWordpressGraphQL\Type\AttachmentType',
+		'User'            => 'Nucreativa\LaravelWordpressGraphQL\Type\UserType',
+		'PostStatus'      => 'Nucreativa\LaravelWordpressGraphQL\Enums\PostStatusEnum',
+		'CommentStatus'   => 'Nucreativa\LaravelWordpressGraphQL\Enums\CommentStatusEnum',
+		'PaginationInput' => 'Nucreativa\LaravelWordpressGraphQL\Inputs\PaginationInput',
+		'SortType'        => 'Nucreativa\LaravelWordpressGraphQL\Enums\SortTypeEnum',
 	],
 
 	/*

@@ -3,21 +3,25 @@
   "description": "Laravel Wordpress GraphQL",
   "type": "library",
   "license": "MIT",
-  "version": "0.16.0",
+  "version": "1.0.0-dev",
   "authors": [
     {
       "name": "Ary Wibowo",
       "email": "nucreativa@gmail.com"
+    },
+    {
+      "name": "Fanny Irawan Sutawanir",
+      "email": "fannyirawans@gmail.com"
     }
   ],
   "require": {
     "folklore/graphql": "^1.1",
-    "nucreativa/laravel-wordpress-models": "^1.0"
+    "nucreativa/laravel-wordpress-models": "^1.1"
   },
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
-      "LaravelWordpressGraphQL\\": "src/"
+      "Nucreativa\\LaravelWordpressGraphQL\\": "src/"
     }
   }
 }

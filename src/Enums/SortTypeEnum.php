@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Enums;
+namespace Nucreativa\LaravelWordpressGraphQL\Enums;
 
 use Folklore\GraphQL\Support\EnumType;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Helper;
+namespace Nucreativa\LaravelWordpressGraphQL\Helper;
 
-use LaravelWordpressGraphQL\Enums\SortTypeEnum;
+use Nucreativa\LaravelWordpressGraphQL\Enums\SortTypeEnum;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 

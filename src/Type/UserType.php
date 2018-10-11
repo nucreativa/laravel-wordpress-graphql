@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Type;
+namespace Nucreativa\LaravelWordpressGraphQL\Type;
 
 
 use Folklore\GraphQL\Support\Facades\GraphQL;

@@ -1,13 +1,13 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Query;
+namespace Nucreativa\LaravelWordpressGraphQL\Query;
 
 
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
-use LaravelWordpressGraphQL\Helper\Paginates;
-use LaravelWordpressModels\Models\Comment;
+use Nucreativa\LaravelWordpressGraphQL\Helper\Paginates;
+use Nucreativa\LaravelWordpressModels\Models\Comment;
 
 class CommentsQuery extends Query {
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Query;
+namespace Nucreativa\LaravelWordpressGraphQL\Query;
 
 
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Query;
-use LaravelWordpressGraphQL\Helper\Paginates;
-use LaravelWordpressModels\Models\Post;
+use Nucreativa\LaravelWordpressGraphQL\Helper\Paginates;
+use Nucreativa\LaravelWordpressModels\Models\Post;
 use GraphQL\Type\Definition\ResolveInfo;
 
 class PagesQuery extends Query {

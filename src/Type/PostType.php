@@ -1,12 +1,12 @@
 <?php
 
-namespace LaravelWordpressGraphQL\Type;
+namespace Nucreativa\LaravelWordpressGraphQL\Type;
 
 
 use Folklore\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Type as GraphQLType;
-use LaravelWordpressGraphQL\Helper\ErtCalculator;
+use Nucreativa\LaravelWordpressGraphQL\Helper\ErtCalculator;
 
 class PostType extends GraphQLType {
 	protected $attributes = [
