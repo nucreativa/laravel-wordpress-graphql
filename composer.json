@@ -16,9 +16,9 @@
   ],
   "require": {
     "folklore/graphql": "dev-develop",
-    "nucreativa/laravel-wordpress-models": "^1.1"
+    "nucreativa/laravel-wordpress-models": "^1.1.0"
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
       "Nucreativa\\LaravelWordpressGraphQL\\": "src/"
