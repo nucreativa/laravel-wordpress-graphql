@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "folklore/graphql": "^1.1",
+    "folklore/graphql": "dev-develop",
     "nucreativa/laravel-wordpress-models": "^1.1"
   },
   "minimum-stability": "stable",
